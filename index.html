@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inserisci il tuo nome</title>
+  <link rel="icon" type="image/svg+xml" href="Logo.svg">
+	<link rel="icon" type="image/x-icon" href="Logo.ico">
+  <style>
+    #quiz-container {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+      margin: 0 auto;
+      margin-top: 17%;
+      padding: 2%;
+      border: 5px inset rgb(172, 40, 40) ; 
+    }
+
+    #name-input {
+      text-align: center;
+    }
+
+    #name-input label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    #name-input input {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    #start-button {
+      background-color: red;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #start-button:hover{
+        background-color: rgb(187, 5, 5);
+        border-radius: 7px;
+    }
+
+    #quiz {
+      display: none;
+    }
+
+    body {
+    background-color: rgb(41, 24, 53); 
+}
+
+  </style>
+</head>
+<body>
+  <div id="quiz-container">
+    <div id="name-input">
+      <label for="name">Inserisci il tuo nome:</label>
+      <input type="text" id="name" placeholder="Nome" required>
+      <button id="start-button" onclick="redirectToSite()">Inizia il Quiz</button>
+    </div>
+
+    <div id="quiz">
+      <!-- Domande del quiz -->
+    </div>
+  </div>
+
+  <script>
+    function redirectToSite() {
+      // Collegamento al sito web desiderato
+      window.location.href = "index.html";
+    }
+   
+  function redirectToSite() {
+    var nameInput = document.getElementById("name").value;
+
+    if (nameInput.trim() === "") {
+      alert("Inserisci il tuo nome prima di iniziare il quiz.");
+    } else {
+      window.location.href = "quiz.html";
+    }
+  }
+
+
+  </script>
+  
+  
+
+</body>
+</html>

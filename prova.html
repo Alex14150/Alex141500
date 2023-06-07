@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timer di 2 minuti</title>
+  <style>
+    .timer-box {
+      width: 200px;
+      height: 100px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer-box" id="timer-box">
+  </div>
+
+  <script>
+    function avviaTimer() {
+      const tempoLimite = 2 * 60; // 2 minuti
+      let tempo = tempoLimite;
+      const timerBox = document.getElementById("timer-box");
+
+      function aggiornaTimer() {
+        const minuti = Math.floor(tempo / 60);
+        const secondi = tempo % 60;
+        timerBox.textContent = `${minuti}:${secondi.toString().padStart(2, "0")}`;
+
+        tempo--;
+
+        if (tempo < 0) {
+          clearInterval(timerInterval);
+          window.location.href = "pagina.html"; // Sostituisci "pagina.html" con l'URL della pagina web desiderata
+        }
+      }
+
+      // Aggiornamento del timer ogni secondo
+      aggiornaTimer();
+      const timerInterval = setInterval(aggiornaTimer, 1000);
+    }
+
+    // Chiamare la funzione per avviare il timer quando la pagina è stata caricata
+    window.onload = avviaTimer;
+  </script>
+</body>
+</html>
